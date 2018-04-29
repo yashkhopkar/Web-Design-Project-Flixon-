@@ -1,0 +1,20 @@
+CREATE TABLE users (
+user_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+first_name VARCHAR(15) NOT NULL,
+last_name   VARCHAR(30) NOT NULL,
+email VARCHAR(40) NOT NULL,
+password CHAR(40) NOT NULL,
+registration_date DATETIME NOT NULL,
+PRIMARY KEY (user_id)
+);
+
+CREATE TABLE contactdetails (
+user_id MEDIUMINT UNSIGNED NOT NULL,
+address_line_1 VARCHAR(40) NOT NULL,
+address_line_2 VARCHAR(40) NOT NULL,
+city VARCHAR(20) NOT NULL,
+state VARCHAR(20) NOT NULL,
+country VARCHAR(30) NOT NULL, 
+FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
